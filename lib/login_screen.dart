@@ -77,7 +77,7 @@ class login_screen extends StatelessWidget {
               },
               child: Text('Forgot Password?'),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
