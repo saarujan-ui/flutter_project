@@ -10,7 +10,16 @@ class VoicePracticeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.green.shade50,
       appBar: AppBar(
-        title: Text('Social Ease'),
+        title: Text(
+          'Voice',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.green.shade200,
       ),
       body: Padding(
 
