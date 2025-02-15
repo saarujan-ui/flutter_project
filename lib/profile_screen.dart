@@ -57,7 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.green.shade100, Colors.green.shade100],
+          colors: [Colors.white, Colors.white],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -80,47 +80,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _build3DCard({required Widget child}) {
-    return Transform(
-      transform: Matrix4.identity()
-        ..setEntry(3, 2, 0.001)  // Perspective effect
-        ..rotateX(-0.1)  // Tilt the card on the X-axis
-        ..rotateY(-0.1), // Tilt the card on the Y-axis
-      alignment: Alignment.center,
-      child: Card(
-        elevation: 10,  // Shadow effect
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: Container(
-          padding: EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            gradient: LinearGradient(
-              colors: [Colors.white, Colors.green.shade200],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: child,
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green.shade50,
       appBar: AppBar(
-        title: _build3DCard(
-          child: Text(
-            'Profile',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
+        title: Text(
+          'Profile',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
           ),
         ),
         centerTitle: true,
@@ -135,14 +105,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
         padding: const EdgeInsets.all(19.0),
         child: Column(
           children: [
-            _build3DCard(
-              child: Image.asset(
-                'assets/selogos/sembup4.gif',
-                width: 240,
-                height: 180,
+            Card(
+              elevation: 5,  // Shadow effect
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(80),
+              ),
+              child: Container(
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(45),
+                  gradient: LinearGradient(
+                    colors: [Colors.white, Colors.white70],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                ),
+                child: Image.asset(
+                  'assets/selogos/sembup4.gif',
+                  width: 240,
+                  height: 180,
+                ),
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 50),
             _gradientTextField(
               controller: _nameController,
               labelText: 'New Name',
