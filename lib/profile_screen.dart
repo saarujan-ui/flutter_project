@@ -39,7 +39,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       widget.user.password = _passwordController.text;
     });
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Profile updated successfully!')),
+      SnackBar(content: Text('Profile details updated successfully!')),
     );
     Navigator.pushReplacement(
       context,
@@ -80,12 +80,50 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
+  Widget _build3DCard({required Widget child}) {
+    return Transform(
+      transform: Matrix4.identity()
+        ..setEntry(3, 2, 0.001)  // Perspective effect
+        ..rotateX(-0.1)  // Tilt the card on the X-axis
+        ..rotateY(-0.1), // Tilt the card on the Y-axis
+      alignment: Alignment.center,
+      child: Card(
+        elevation: 10,  // Shadow effect
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Container(
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            gradient: LinearGradient(
+              colors: [Colors.white, Colors.green.shade200],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: child,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green.shade50,
       appBar: AppBar(
-        title: Text('Profile'),
+        title: _build3DCard(
+          child: Text(
+            'Profile',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ),
+        centerTitle: true,
         actions: [
           IconButton(
             icon: Icon(Icons.save),
@@ -94,15 +132,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(19.0),
         child: Column(
           children: [
-            Image.asset(
-              'assets/selogos/sembup4.gif',
-              width: 240,
-              height: 180,
+            _build3DCard(
+              child: Image.asset(
+                'assets/selogos/sembup4.gif',
+                width: 240,
+                height: 180,
+              ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 40),
             _gradientTextField(
               controller: _nameController,
               labelText: 'New Name',
