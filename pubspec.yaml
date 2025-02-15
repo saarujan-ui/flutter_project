@@ -68,6 +68,7 @@ flutter:
     - assets/selogos/semb1.png
     - assets/selogos/sembv1.png
     - assets/selogos/sembv2.gif
+    - assets/selogos/sembup4.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

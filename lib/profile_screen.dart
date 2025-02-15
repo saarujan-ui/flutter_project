@@ -67,16 +67,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            CircleAvatar(
-              radius: 50,
-              backgroundColor: Colors.teal.shade700,
-              child: Icon(
-                Icons.person,
-                size: 45,
-                color: Colors.white,
-              ),
+            Image.asset(
+              'assets/selogos/sembup4.gif',
+              width: 240,
+              height: 180,
             ),
-            SizedBox(height: 50),
+
+            SizedBox(height: 20),
             TextField(
               controller: _nameController,
               decoration: InputDecoration(
