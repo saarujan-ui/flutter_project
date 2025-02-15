@@ -69,22 +69,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
           children: [
             CircleAvatar(
               radius: 50,
-              backgroundColor: Colors.blue,
+              backgroundColor: Colors.teal.shade700,
               child: Icon(
                 Icons.person,
-                size: 50,
+                size: 45,
                 color: Colors.white,
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 50),
             TextField(
               controller: _nameController,
               decoration: InputDecoration(
                 labelText: 'Name',
+
+
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 30),
             TextField(
               controller: _emailController,
               decoration: InputDecoration(
@@ -92,7 +94,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 30),
             TextField(
               controller: _passwordController,
               obscureText: true,
