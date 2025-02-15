@@ -80,7 +80,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             TextField(
               controller: _nameController,
               decoration: InputDecoration(
-                labelText: 'Name',
+                labelText: 'New Name',
 
 
                 border: OutlineInputBorder(),
@@ -90,7 +90,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             TextField(
               controller: _emailController,
               decoration: InputDecoration(
-                labelText: 'Email',
+                labelText: 'Add a Email',
                 border: OutlineInputBorder(),
               ),
             ),
@@ -99,7 +99,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               controller: _passwordController,
               obscureText: true,
               decoration: InputDecoration(
-                labelText: 'Password',
+                labelText: 'New Password',
                 border: OutlineInputBorder(),
               ),
             ),
