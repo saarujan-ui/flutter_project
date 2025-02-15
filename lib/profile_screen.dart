@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'MyHomePage.dart';
-
+import 'MyHomePage.dart';  // Import your home screen
 import 'models/user.dart';  // Import the User model
 
 class ProfileScreen extends StatefulWidget {
@@ -50,6 +49,37 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
+  Widget _gradientTextField({
+    required TextEditingController controller,
+    required String labelText,
+    bool obscureText = false,
+  }) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.green.shade100, Colors.green.shade100],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: TextField(
+        controller: controller,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          labelText: labelText,
+          labelStyle: TextStyle(color: Colors.black),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide.none,
+          ),
+          filled: true,
+          fillColor: Colors.transparent,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,33 +102,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
               width: 240,
               height: 180,
             ),
-
             SizedBox(height: 20),
-            TextField(
+            _gradientTextField(
               controller: _nameController,
-              decoration: InputDecoration(
-                labelText: 'New Name',
-
-
-                border: OutlineInputBorder(),
-              ),
+              labelText: 'New Name',
             ),
             SizedBox(height: 30),
-            TextField(
+            _gradientTextField(
               controller: _emailController,
-              decoration: InputDecoration(
-                labelText: 'Add a Email',
-                border: OutlineInputBorder(),
-              ),
+              labelText: 'Add an Email',
             ),
             SizedBox(height: 30),
-            TextField(
+            _gradientTextField(
               controller: _passwordController,
+              labelText: 'New Password',
               obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'New Password',
-                border: OutlineInputBorder(),
-              ),
             ),
           ],
         ),
