@@ -114,30 +114,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Image.asset(
               'assets/selogos/sembup4.gif',
               width: 240,
-              height: 180,
+              height: 140,
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 35),
             _gradientTextField(
               controller: _nameController,
               labelText: 'New Name',
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 24),
             _gradientTextField(
               controller: _emailController,
               labelText: 'Add an Email',
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 24),
             _gradientTextField(
               controller: _passwordController,
               labelText: 'New Password',
               obscureText: true,
             ),
-            SizedBox(height: 8),
-            Image.asset(
-              'assets/selogos/sembup6.gif',
-              width: 750,
-              height: 150,
-            ),
+
+
           ],
         ),
       ),
