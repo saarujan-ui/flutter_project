@@ -54,27 +54,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
     required String labelText,
     bool obscureText = false,
   }) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Colors.white, Colors.white],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
+    return Card(
+      elevation: 5,  // Shadow effect
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      child: TextField(
-        controller: controller,
-        obscureText: obscureText,
-        decoration: InputDecoration(
-          labelText: labelText,
-          labelStyle: TextStyle(color: Colors.black),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide.none,
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.green.shade50, Colors.white70],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-          filled: true,
-          fillColor: Colors.transparent,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: TextField(
+          controller: controller,
+          obscureText: obscureText,
+          decoration: InputDecoration(
+            labelText: labelText,
+            labelStyle: TextStyle(color: Colors.black),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide.none,
+            ),
+            filled: true,
+            fillColor: Colors.transparent,
+          ),
         ),
       ),
     );
@@ -105,29 +111,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
         padding: const EdgeInsets.all(19.0),
         child: Column(
           children: [
-            Card(
-              elevation: 5,  // Shadow effect
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(80),
-              ),
-              child: Container(
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(45),
-                  gradient: LinearGradient(
-                    colors: [Colors.white, Colors.white70],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
-                child: Image.asset(
-                  'assets/selogos/sembup4.gif',
-                  width: 240,
-                  height: 180,
-                ),
-              ),
+            Image.asset(
+              'assets/selogos/sembup4.gif',
+              width: 240,
+              height: 180,
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 40),
             _gradientTextField(
               controller: _nameController,
               labelText: 'New Name',
@@ -142,6 +131,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               controller: _passwordController,
               labelText: 'New Password',
               obscureText: true,
+            ),
+            SizedBox(height: 8),
+            Image.asset(
+              'assets/selogos/sembup6.gif',
+              width: 750,
+              height: 150,
             ),
           ],
         ),
