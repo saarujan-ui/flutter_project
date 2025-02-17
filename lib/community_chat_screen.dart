@@ -78,15 +78,7 @@ class CommunityChatScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 10),
-                CircleAvatar(
-                  backgroundColor: Colors.green.shade300,
-                  child: IconButton(
-                    icon: Icon(Icons.send, color: Colors.white),
-                    onPressed: () {
-                      // Add send message logic here
-                    },
-                  ),
-                ),
+                
               ],
             ),
           ],
