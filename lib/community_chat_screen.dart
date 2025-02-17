@@ -46,10 +46,10 @@ class CommunityChatScreen extends StatelessWidget {
                         ),
                       ),
                       subtitle: Text(
-                        'Hello! This is a sample message from User ${index + 1}.',
+                        'Hello! ${index + 1}.',
                       ),
                       trailing: Text(
-                        '12:00 PM',  // Example timestamp
+                        '00:00 PM',  // Example timestamp
                         style: TextStyle(color: Colors.grey),
                       ),
                     ),
