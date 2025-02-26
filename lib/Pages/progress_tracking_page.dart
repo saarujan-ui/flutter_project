@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../style/colour.dart';
+import 'package:frontend_part_2/style/progress_chart.dart';
+
 
 class ProgressTrackingPage extends StatefulWidget {
   const ProgressTrackingPage({super.key});
@@ -9,77 +11,37 @@ class ProgressTrackingPage extends StatefulWidget {
 }
 
 class _ProgressTrackingPageState extends State<ProgressTrackingPage> {
-  List<Map<String,dynamic>> dailyProgress = [];
-  List<int> weeklyProgress = [];
-
-  //connecting backend code mostly
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   fetchProgressData(); // Fetch data when the screen loads
-  // }
-  //
-  // Future<void> fetchProgressData() async {
-  //   try {
-  //     // Placeholder API URL (Replace with actual backend URL)
-  //     final response = await http.get(Uri.parse("https://your-backend.com/progress"));
-  //
-  //     if (response.statusCode == 200) {
-  //       final data = json.decode(response.body);
-  //
-  //       setState(() {
-  //         dailyProgress = List<Map<String, dynamic>>.from(data['daily']);
-  //         weeklyProgress = List<int>.from(data['weekly']);
-  //       });
-  //     } else {
-  //       throw Exception("Failed to load progress data");
-  //     }
-  //   } catch (error) {
-  //     print("Error fetching data: $error");
-  //   }
-  // }
-
+  List<double> progressData = [40,50,70,30,85,60,90];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: FutureBuilder(
-        future: Future.delayed(Duration(seconds: 2)),
-        builder: (context, snapshot){
-          if (snapshot.connectionState == ConnectionState.waiting){
-            return Center(child:CircularProgressIndicator()
-            );
-          }
-          return Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Daily Progress",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 10,),
-                //dailyProgress.map((data = > buildProgressCard(data["day"],data["Progress"]))).toList(),
-                Divider(),
-                Text(
-                "Weekly Progress",
-                  style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                  ),
-                ),
-                SizedBox(height: 10,),
-                //Expanded (
-                //child: buildweeklyChart(),
-               // )
-              ],
-            ),
-          );
-        }
-      ),
-    );
+   return Scaffold(
+     appBar: AppBar(
+       title: Text(
+         "Weekly progress"
+       ),
+     ),
+     body: Column(
+       children: [
+         SizedBox(height: 20,),
+         Text(
+           "Your Weekly Progress",
+           style: TextStyle(
+             fontSize: 18,
+             fontWeight: FontWeight.bold,
+           ),
+         ),
+         ProgressChart(
+           progressData: progressData,
+         ),
+         SizedBox(height: 20,),
+         Text(
+           "Average : ${(progressData.reduce((a,b) => a + b)/progressData.length).toStringAsFixed(1)}%",
+           style: TextStyle(
+             fontSize: 16,
+           ),
+         ),
+       ],
+     ),
+   );
   }
 }
