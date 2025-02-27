@@ -17,7 +17,7 @@ class ProgressChartState extends State<ProgressChart> {
     return SizedBox(
       height: 350,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.only(left: 15,right: 15,top: 15),
         child: LineChart(
           LineChartData(
             gridData: FlGridData(
@@ -32,12 +32,15 @@ class ProgressChartState extends State<ProgressChart> {
                     reservedSize: 40,
                     interval: 20,
                     getTitlesWidget: (value, meta) =>
-                        Text(
-                          value.toInt().toString(),
-                          style: TextStyle(
-                            color: AppColors.green_1,
-                          ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Text(
+                        value.toInt().toString(),
+                        style: TextStyle(
+                          color: AppColors.green_1,
                         ),
+                      ),
+                    ),
                   ),
                 ),
                 rightTitles: AxisTitles(

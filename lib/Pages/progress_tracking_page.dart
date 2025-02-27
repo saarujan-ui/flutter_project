@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../style/colour.dart';
+import 'package:frontend_part_2/style/colour.dart';
 import 'package:frontend_part_2/style/progress_chart.dart';
 
 
@@ -15,32 +15,73 @@ class _ProgressTrackingPageState extends State<ProgressTrackingPage> {
   @override
   Widget build(BuildContext context) {
    return Scaffold(
-     appBar: AppBar(
-       title: Text(
-         "Weekly progress"
+     body: Container(
+       decoration: BoxDecoration(
+         gradient: LinearGradient(
+           colors: [AppColors.green_1, AppColors.green_2],
+           begin: const FractionalOffset(0.0, 0.4),
+           end: Alignment.topLeft,
+         ),
        ),
-     ),
-     body: Column(
-       children: [
-         SizedBox(height: 20,),
-         Text(
-           "Your Weekly Progress",
-           style: TextStyle(
-             fontSize: 18,
-             fontWeight: FontWeight.bold,
+       child: Column(
+         children: [
+           Container(
+             padding: const EdgeInsets.only(top: 30,left: 20,right: 20),
+             width: MediaQuery.of(context).size.width,
+             height: 100,
+             child: Column(
+               crossAxisAlignment: CrossAxisAlignment.start,
+               children: [
+                 const SizedBox(height: 20,),
+                 Align(
+                   alignment: Alignment.centerLeft,
+                   child: Text(
+                     "Progress Branch",
+                     style: TextStyle(
+                       fontSize: 30,
+                       color: AppColors.textMain,
+                       fontWeight: FontWeight.bold,
+                     ),
+                   ),
+                 ),
+               ],
+             ),
            ),
-         ),
-         ProgressChart(
-           progressData: progressData,
-         ),
-         SizedBox(height: 20,),
-         Text(
-           "Average : ${(progressData.reduce((a,b) => a + b)/progressData.length).toStringAsFixed(1)}%",
-           style: TextStyle(
-             fontSize: 16,
-           ),
-         ),
-       ],
+           Expanded(
+             child: Container(
+               decoration: BoxDecoration(
+                 color: AppColors.background,
+                 borderRadius: const BorderRadius.only(
+                   topLeft: Radius.circular(20),
+                   topRight: Radius.circular(20),
+                 ),
+               ),
+               child: Column(
+                 children: [
+                   const SizedBox(height: 20,),
+                   const Text(
+                     "Your Weekly Progress",
+                     style: TextStyle(
+                       fontSize: 18,
+                       fontWeight: FontWeight.bold,
+                     ),
+                   ),
+                   ProgressChart(
+                       progressData: progressData
+                   ),
+                   const SizedBox(height: 20,),
+                   Text(
+                     "Average : ${(progressData.reduce((a,b) => a + b / progressData.length).toStringAsFixed(1))}%",
+                     style: const TextStyle(
+                       fontSize: 16,
+                     ),
+                   )
+                 ],
+               ),
+             ),
+           )
+         ],
+       ),
      ),
    );
   }
