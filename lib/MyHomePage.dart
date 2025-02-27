@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'profile_screen.dart';  // Import the profile screen
 import 'voice_practice_screen.dart';  // Import the voice practice screen
 import 'community_chat_screen.dart';  // Import the community chat screen
+import 'ice_breaker_screen.dart';  // Import the Ice Breaker screen
 import 'models/user.dart';  // Import the User model
 
 class HomeScreen extends StatelessWidget {
@@ -83,6 +84,28 @@ class HomeScreen extends StatelessWidget {
               },
               child: Text(
                 'Community Chat',
+                style: TextStyle(fontSize: 18),
+              ),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                backgroundColor: Colors.green.shade300,
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => IceBreakerScreen(userName: user.name),
+                  ),
+                );
+              },
+              child: Text(
+                'Ice Breaker Session',
                 style: TextStyle(fontSize: 18),
               ),
               style: ElevatedButton.styleFrom(
