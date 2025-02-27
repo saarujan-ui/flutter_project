@@ -8,6 +8,8 @@ class CommunityChatScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Community Chat',
+
+
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
