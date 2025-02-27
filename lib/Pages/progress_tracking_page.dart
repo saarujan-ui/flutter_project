@@ -64,6 +64,7 @@ class _ProgressTrackingPageState extends State<ProgressTrackingPage> {
                      style: TextStyle(
                        fontSize: 18,
                        fontWeight: FontWeight.bold,
+                       color: AppColors.green_1,
                      ),
                    ),
                    ProgressChart(

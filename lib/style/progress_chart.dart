@@ -17,7 +17,7 @@ class ProgressChartState extends State<ProgressChart> {
     return SizedBox(
       height: 350,
       child: Padding(
-        padding: const EdgeInsets.only(left: 15,right: 15,top: 15),
+        padding: const EdgeInsets.only(left: 10,right: 20,top: 15),
         child: LineChart(
           LineChartData(
             gridData: FlGridData(
