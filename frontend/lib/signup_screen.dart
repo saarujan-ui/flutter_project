@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'MyHomePage.dart';
 import 'login_screen.dart';
-
-import 'models/user.dart';    // Import the User model
+import 'models/user.dart';
 
 class signup_screen extends StatelessWidget {
   final TextEditingController _nameController = TextEditingController();
@@ -11,7 +10,6 @@ class signup_screen extends StatelessWidget {
   final TextEditingController _confirmPasswordController = TextEditingController();
 
   void _signup(BuildContext context) {
-    // Simulate a successful signup
     final user = User(
       name: _nameController.text,
       email: _emailController.text,
@@ -32,12 +30,11 @@ class signup_screen extends StatelessWidget {
       backgroundColor: Colors.green.shade50,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Create     ',
+              'Create',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -45,55 +42,37 @@ class signup_screen extends StatelessWidget {
               ),
             ),
             Text(
-
-              'an Account !',
+              'an Account!',
               style: TextStyle(
-
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
                 color: Colors.green.shade300,
               ),
             ),
             SizedBox(height: 20),
-            TextField(
-              controller: _nameController,
-              decoration: InputDecoration(
-                labelText: 'User Name',
-                border: OutlineInputBorder(),
-              ),
-            ),
+
+            _buildTextField(_nameController, "User Name"),
+            SizedBox(height: 15),
+            _buildTextField(_emailController, "Email Address"),
+            SizedBox(height: 15),
+            _buildTextField(_passwordController, "Password", obscureText: true),
+            SizedBox(height: 15),
+            _buildTextField(_confirmPasswordController, "Confirm Password", obscureText: true),
             SizedBox(height: 20),
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(
-                labelText: 'Email Address',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: _passwordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Password',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: _confirmPasswordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Confirm Password',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 20),
+
             ElevatedButton(
               onPressed: () => _signup(context),
-              child: Text('SIGN IN'),
+              child: Text('SIGN UP'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green.shade300,
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
             ),
             SizedBox(height: 10),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -110,6 +89,31 @@ class signup_screen extends StatelessWidget {
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTextField(TextEditingController controller, String hintText, {bool obscureText = false}) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 5,
+          ),
+        ],
+      ),
+      child: TextField(
+        controller: controller,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          hintText: hintText,
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         ),
       ),
     );
