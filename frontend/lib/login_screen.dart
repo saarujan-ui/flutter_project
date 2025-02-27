@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/signup_screen.dart';
+import 'signup_screen.dart';
 import 'MyHomePage.dart';
-
-import 'models/user.dart';    // Import the User model
+import 'models/user.dart';
 
 class login_screen extends StatelessWidget {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   void _login(BuildContext context) {
-    // Simulate a successful login
     final user = User(
       name: _nameController.text,
       email: 'user@example.com',
@@ -48,36 +46,30 @@ class login_screen extends StatelessWidget {
             ),
             SizedBox(height: 30),
 
-            TextField(
-              controller: _nameController,
-              decoration: InputDecoration(
-                labelText: 'Name',
-                border: OutlineInputBorder(),
-              ),
-            ),
+            _buildTextField(_nameController, "Name"),
             SizedBox(height: 10),
-            TextField(
-              controller: _passwordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Password',
-                border: OutlineInputBorder(),
-
-              ),
-            ),
+            _buildTextField(_passwordController, "Password", obscureText: true),
             SizedBox(height: 20),
+
             ElevatedButton(
               onPressed: () => _login(context),
               child: Text('Log In'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green.shade300,
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
             ),
             SizedBox(height: 10),
+
             TextButton(
-              onPressed: () {
-                // Add forgot password logic here
-              },
+              onPressed: () {},
               child: Text('Forgot Password?'),
             ),
             SizedBox(height: 10),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -98,4 +90,31 @@ class login_screen extends StatelessWidget {
       ),
     );
   }
+
+  Widget _buildTextField(TextEditingController controller, String hintText, {bool obscureText = false}) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 5,
+          ),
+        ],
+      ),
+      child: TextField(
+        controller: controller,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          hintText: hintText,
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        ),
+      ),
+    );
+  }
 }
+
+
