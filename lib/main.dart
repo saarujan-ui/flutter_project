@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_part_2/Pages/about_page.dart';
 import 'package:frontend_part_2/Pages/conversation_branch_page.dart';
 import 'package:frontend_part_2/Pages/home_page.dart';
 import 'package:frontend_part_2/Pages/progress_tracking_page.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const SettingsPage(),
+      home: const AboutPage(),
     );
   }
 }
