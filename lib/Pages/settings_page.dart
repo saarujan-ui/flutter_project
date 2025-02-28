@@ -138,7 +138,24 @@ class _SettingsPageState extends State<SettingsPage> {
                         ),
                       ),
                       subtitle: Text(
-                        "App information"
+                        "App Information"
+                      ),
+                      onTap: (){},
+                    ),
+                    Divider(),
+                    ListTile(
+                      leading: Icon(
+                        Icons.question_mark_rounded
+                      ),
+                      title: Text(
+                        "Help",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      subtitle: Text(
+                          "Contact for Support"
                       ),
                       onTap: (){},
                     ),
