@@ -37,7 +37,7 @@ class _AboutPageState extends State<AboutPage> {
                     ),
                     const SizedBox(width: 10,),
                     Text(
-                      "Help",
+                      "About Us",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 30,
@@ -57,8 +57,17 @@ class _AboutPageState extends State<AboutPage> {
                     topLeft: Radius.circular(20),
                   ),
                 ),
+                child: SingleChildScrollView(
+                  child: Text(
+                    "An application made by Team Social Ease",
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: AppColors.textSub,
+                    ),
+                  ),
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),
