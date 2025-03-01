@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:frontend_part_2/style/colour.dart';
 
-class AboutPage extends StatefulWidget {
-  const AboutPage({super.key});
+import '../style/colour.dart';
+
+class HelpPage extends StatefulWidget {
+  const HelpPage({super.key});
 
   @override
-  State<AboutPage> createState() => _AboutPageState();
+  State<HelpPage> createState() => _HelpPageState();
 }
 
-class _AboutPageState extends State<AboutPage> {
+class _HelpPageState extends State<HelpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
