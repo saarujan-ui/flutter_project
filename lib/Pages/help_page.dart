@@ -38,7 +38,7 @@ class _HelpPageState extends State<HelpPage> {
                     ),
                     const SizedBox(width: 10,),
                     Text(
-                      "About Us",
+                      "Help",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 30,
