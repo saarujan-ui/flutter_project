@@ -140,7 +140,45 @@ class _AboutPageState extends State<AboutPage> {
                         ),
                         const SizedBox(height: 10,),
                         Text(
-                          "Thank you for using our app",
+                          "Why We Created This App",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.textSub,
+                          ),
+                        ),
+                        const SizedBox(height: 10,),
+                        Text(
+                          "We understand how intimidating it can be to speak up, especially when confidence feels out of reach, "
+                          "Many people have great ideas but struggle to voice them due to anxiety, self-doubt, "
+                          "or lack of practice. Our team has designed this app to provide a safe and structured space where users "
+                          "can grow at their own pace, free from judgment.",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: AppColors.textSub,
+                          ),
+                        ),
+                        const SizedBox(height: 10,),
+                        Text(
+                          "Who Is This App For",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.textSub,
+                          ),
+                        ),
+                        const SizedBox(height: 10,),
+                        Text(
+                          "Whether you're a student preparing for presentations, a professional aiming to communication with impact,or "
+                          "someone who simply wants to be more confident in daily conversations, Social is built to support you",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: AppColors.textSub,
+                          ),
+                        ),
+                        const SizedBox(height: 10,),
+                        Text(
+                          "Thank you for for using our app and supporting the Social Ease Team",
                           style: TextStyle(
                             fontSize: 15,
                             color: AppColors.textSub
