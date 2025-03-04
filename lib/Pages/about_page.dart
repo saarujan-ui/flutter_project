@@ -68,7 +68,7 @@ class _AboutPageState extends State<AboutPage> {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.textSub,
+                            color: AppColors.green_5,
                           ),
                         ),
                         const SizedBox(height: 10,),
@@ -89,7 +89,7 @@ class _AboutPageState extends State<AboutPage> {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.textSub,
+                            color: AppColors.green_5,
                           ),
                         ),
                         const SizedBox(height: 10,),
@@ -118,7 +118,7 @@ class _AboutPageState extends State<AboutPage> {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.textSub,
+                            color: AppColors.green_5,
                           ),
                         ),
                         const SizedBox(height: 10,),
@@ -138,7 +138,7 @@ class _AboutPageState extends State<AboutPage> {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.textSub,
+                            color: AppColors.green_5,
                           ),
                         ),
                         const SizedBox(height: 10,),

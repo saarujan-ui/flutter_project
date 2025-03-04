@@ -38,7 +38,7 @@ class _HelpPageState extends State<HelpPage> {
                     ),
                     const SizedBox(width: 10,),
                     Text(
-                      "Help",
+                      "Help Center",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 30,
@@ -57,6 +57,53 @@ class _HelpPageState extends State<HelpPage> {
                     topRight: Radius.circular(20),
                     topLeft: Radius.circular(20),
                   ),
+                ),
+                child: ListView(
+                  children: [
+                    ListTile(
+                      leading: Icon(
+                        Icons.support_agent_rounded,
+                        color: AppColors.green_1,
+                        size: 30,
+                      ),
+                      title: Text(
+                        "Contacts",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      subtitle: Text(
+                          "For technical support contact us",
+                        style: TextStyle(
+                          fontSize: 15,
+                        ),
+                      ),
+                      onTap: (){},
+                    ),
+                    Divider(),
+                    ListTile(
+                      leading: Icon(
+                        Icons.face_sharp,
+                        color: AppColors.green_1,
+                        size: 30,
+                      ),
+                      title: Text(
+                        "Social Media",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      subtitle: Text(
+                          "Check out our Social Media",
+                        style: TextStyle(
+                          fontSize: 15,
+                        ),
+                      ),
+                      onTap: (){},
+                    ),
+                  ],
                 ),
               ),
             ),
