@@ -60,7 +60,7 @@ class _HelpPageState extends State<HelpPage> {
                 ),
                 child: ListView(
                   children: [
-                    ListTile(
+                    ExpansionTile(
                       leading: Icon(
                         Icons.support_agent_rounded,
                         color: AppColors.green_1,
@@ -69,22 +69,26 @@ class _HelpPageState extends State<HelpPage> {
                       title: Text(
                         "Contacts",
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
                           fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      subtitle: Text(
-                          "For technical support contact us",
-                        style: TextStyle(
-                          fontSize: 15,
+                      children: [
+                        ListTile(
+                          title: Text(
+                            "Email"
+                          ),
+                          leading: Icon(
+                            Icons.email_rounded,
+                            color: AppColors.green_1,
+                          ),
                         ),
-                      ),
-                      onTap: (){},
+                      ],
                     ),
                     Divider(),
-                    ListTile(
+                    ExpansionTile(
                       leading: Icon(
-                        Icons.face_sharp,
+                        Icons.face_6_rounded,
                         color: AppColors.green_1,
                         size: 30,
                       ),
@@ -95,13 +99,24 @@ class _HelpPageState extends State<HelpPage> {
                           fontSize: 20,
                         ),
                       ),
-                      subtitle: Text(
-                          "Check out our Social Media",
-                        style: TextStyle(
-                          fontSize: 15,
+                      children: [
+                        ListTile(
+                          title: Text(
+                            "Instagram",
+                          ),
+                          leading: Icon(
+                            Icons.camera_alt_rounded
+                          ),
                         ),
-                      ),
-                      onTap: (){},
+                        ListTile(
+                          title: Text(
+                            "Youtube",
+                          ),
+                          leading: Icon(
+                            Icons.video_camera_back,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
