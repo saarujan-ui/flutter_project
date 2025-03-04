@@ -102,41 +102,15 @@ class _AboutPageState extends State<AboutPage> {
                             color: AppColors.textSub,
                           ),
                         ),
-                        const SizedBox(height: 5,),
-                        Text(
-                          "Help individuals overcome the fear of public speaking.",
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.textSub
-                          ),
-                        ),
-                        const SizedBox(height: 5,),
-                        Text(
-                          "Provide structured exercises that encourage gradual progress.",
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.textSub
-                          ),
-                        ),
-                        const SizedBox(height: 5,),
-                        Text(
-                          "Foster self-expression through interactive and immersive activities.",
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.textSub
-                          ),
-                        ),
-                        const SizedBox(height: 5,),
-                        Text(
-                          "Offer constructive feedback that builds confidence over time.",
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.textSub
-                          ),
+                       const SizedBox(height: 5,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            bulletPoint("Help individuals overcome the fear of public speaking."),
+                            bulletPoint("Provide structured exercises that encourage gradual progress."),
+                            bulletPoint("Foster self-expression through interactive and immersive activities."),
+                            bulletPoint("Offer constructive feedback that builds confidence over time."),
+                          ],
                         ),
                         const SizedBox(height: 10,),
                         Text(
@@ -192,6 +166,33 @@ class _AboutPageState extends State<AboutPage> {
             ),
           ],
         ),
+      ),
+    );
+  }
+  Widget bulletPoint (String text) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 3),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+              "• ",
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.bold
+            ),
+          ),
+          Expanded(
+            child: Text(
+              text,
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 15,
+                color: AppColors.textSub,
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
