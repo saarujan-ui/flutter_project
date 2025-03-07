@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:frontend_part_2/Pages/conversation_branch_page.dart';
+import 'package:frontend_part_2/Pages/help_page.dart';
+import 'package:frontend_part_2/Pages/progress_tracking_page.dart';
+import 'package:frontend_part_2/Pages/settings_page.dart';
 import 'package:frontend_part_2/style/colour.dart';
 
 class HomePage extends StatefulWidget {
@@ -10,6 +13,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // Track selected tab index
+  int currentPageIndex = 0;
+
   final List<Map<String,dynamic>> gridItem = [
     {
       "color" : AppColors.green_5,
@@ -24,7 +30,54 @@ class _HomePageState extends State<HomePage> {
     }
   ];
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: IndexedStack(
+        index: currentPageIndex,
+        children: [
+          buildHomeScreen(context), //home_page
+          const ProgressTrackingPage(), // progress_tracking page
+          const HelpPage(), // add Community Page here to the nav bar
+          const SettingsPage(),
+        ],
+      ),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: currentPageIndex,
+        onDestinationSelected: (int index){
+          setState(() {
+            currentPageIndex = index;
+          });
+        },
+        destinations: const<NavigationDestination>[
+          NavigationDestination(
+            icon: Icon(
+              Icons.home_outlined,
+            ),
+            label: "Home",
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.bar_chart,
+            ),
+            label: "Progress Branch",
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.people,
+            ),
+            label: "Community",
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.settings,
+            ),
+            label: "Settings",
+          ),
+        ],
+      ),
+    );
+  }
+  Widget buildHomeScreen(BuildContext context) {
     var size = MediaQuery.of(context).size; //gives total height of device
     return Scaffold(
       body: Stack(
