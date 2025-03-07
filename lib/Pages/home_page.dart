@@ -41,39 +41,52 @@ class _HomePageState extends State<HomePage> {
           const SettingsPage(),
         ],
       ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: currentPageIndex,
-        onDestinationSelected: (int index){
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        destinations: const<NavigationDestination>[
-          NavigationDestination(
-            icon: Icon(
-              Icons.home_outlined,
+      bottomNavigationBar: NavigationBarTheme(
+        data: NavigationBarThemeData(
+          indicatorColor: AppColors.textMain,
+          labelTextStyle: WidgetStateProperty.all(
+            TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+              color: AppColors.textMain
             ),
-            label: "Home",
           ),
-          NavigationDestination(
-            icon: Icon(
-              Icons.bar_chart,
+        ),
+        child: NavigationBar(
+          backgroundColor: AppColors.green_5,
+          selectedIndex: currentPageIndex,
+          onDestinationSelected: (int index){
+            setState(() {
+              currentPageIndex = index;
+            });
+          },
+          destinations: const<NavigationDestination> [
+            NavigationDestination(
+              icon: Icon(
+                Icons.home,
+              ),
+              label: "Home",
             ),
-            label: "Progress Branch",
-          ),
-          NavigationDestination(
-            icon: Icon(
-              Icons.people,
+            NavigationDestination(
+              icon: Icon(
+                Icons.bar_chart_rounded,
+              ),
+              label: "Progress",
             ),
-            label: "Community",
-          ),
-          NavigationDestination(
-            icon: Icon(
-              Icons.settings,
+            NavigationDestination(
+              icon: Icon(
+                Icons.people_alt_rounded,
+              ),
+              label: "Community",
             ),
-            label: "Settings",
-          ),
-        ],
+            NavigationDestination(
+              icon: Icon(
+                Icons.settings,
+              ),
+              label: "Settings",
+            ),
+          ],
+        ),
       ),
     );
   }
