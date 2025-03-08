@@ -30,10 +30,15 @@ class _AboutPageState extends State<AboutPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   children: [
-                    Icon(
-                      Icons.arrow_back_ios,
-                      size: 25,
-                      color: AppColors.textMain,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        size: 25,
+                        color: AppColors.textMain,
+                      ),
                     ),
                     const SizedBox(width: 10,),
                     Text(

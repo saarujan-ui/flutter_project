@@ -62,11 +62,16 @@ class _ConversationBranchPageState extends State<ConversationBranchPage> {
                 children: [
                   Row(
                     children: [
-                      Icon(
-                        Icons.arrow_back_ios,
-                        size: 25,
-                        color: AppColors.textMain,
-                      )
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          size: 25,
+                          color: AppColors.textMain,
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(height: 30,),
