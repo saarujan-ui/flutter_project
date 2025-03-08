@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_part_2/Pages/about_page.dart';
+import 'package:frontend_part_2/Pages/help_page.dart';
 import 'package:frontend_part_2/style/colour.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -9,7 +11,6 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  bool darkMode = false; //state for darkMode;
   bool notificationEnable = false; //state for notifications
 
   @override
@@ -74,7 +75,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       subtitle: Text(
                         "Manage your account settings"
                       ),
-                      onTap: (){},
+                      onTap: (){}, //Add Account Page settings
                     ),
                     Divider(),
                     ListTile(
@@ -104,30 +105,6 @@ class _SettingsPageState extends State<SettingsPage> {
                     Divider(),
                     ListTile(
                       leading: Icon(
-                        darkMode ? Icons.nightlight_round : Icons.wb_sunny_rounded
-                      ),
-                      title: Text(
-                        "Dark Mode",
-                        style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        ),
-                      ),
-                      subtitle: Text(
-                        "Enable Dark Theme"
-                      ),
-                      trailing: Switch(
-                        value: darkMode,
-                          onChanged: (bool value){
-                          setState(() {
-                            darkMode = value;
-                          });
-                        }
-                      ),
-                    ),
-                    Divider(),
-                    ListTile(
-                      leading: Icon(
                         Icons.info_outline_rounded,
                       ),
                       title: Text(
@@ -140,7 +117,12 @@ class _SettingsPageState extends State<SettingsPage> {
                       subtitle: Text(
                         "App Information"
                       ),
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AboutPage()),
+                        );
+                      },
                     ),
                     Divider(),
                     ListTile(
@@ -157,7 +139,12 @@ class _SettingsPageState extends State<SettingsPage> {
                       subtitle: Text(
                           "Contact for Support"
                       ),
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HelpPage()),
+                        );
+                      },
                     ),
                   ],
                 ),
