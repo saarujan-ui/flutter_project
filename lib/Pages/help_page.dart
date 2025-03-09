@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+// import 'package:url_launcher/url_launcher.dart';
 import '../style/colour.dart';
 
 class HelpPage extends StatefulWidget {
@@ -10,6 +10,12 @@ class HelpPage extends StatefulWidget {
 }
 
 class _HelpPageState extends State<HelpPage> {
+  // void launchURL(String url) async{
+  //   final Uri uri = Uri.parse(url);
+  //   if(!await launchUrl(uri,mode: LaunchMode.externalApplication)){
+  //     throw "Could not launch $url";
+  //   }
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,6 +118,7 @@ class _HelpPageState extends State<HelpPage> {
                           leading: Icon(
                             Icons.camera_alt_rounded
                           ),
+                          //onTap: ()=> launchURL("https://www.instagram.com/p/DFvTzwFycFF/?utm_source=ig_web_copy_link"),
                         ),
                         ListTile(
                           title: Text(
@@ -120,6 +127,7 @@ class _HelpPageState extends State<HelpPage> {
                           leading: Icon(
                             Icons.video_camera_back,
                           ),
+                          //onTap: ()=> launchURL("https://www.youtube.com/@SocialEase-e2l"),
                         ),
                       ],
                     ),
