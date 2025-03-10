@@ -13,7 +13,7 @@ def register():
     password = data.get('password')
 
     if get_user_by_email(email):
-        return jsonify({'message': 'User already exists'}), 400
+        return jsonify({'message': 'User Already Exists'}), 400
 
     create_user(email, password)
     return jsonify({'message': 'User registered successfully'}), 201
