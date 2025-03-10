@@ -33,12 +33,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context){
     return Scaffold(
       body: IndexedStack(
+        //The Bottom Navigation's Options are places here
         index: currentPageIndex,
         children: [
           buildHomeScreen(context), //home_page
           const ProgressTrackingPage(), // progress_tracking page
           const HelpPage(), // add Community Page here to the nav bar
-          const SettingsPage(),
+          const SettingsPage(), //Settings page
         ],
       ),
       bottomNavigationBar: NavigationBarTheme(
@@ -132,6 +133,8 @@ class _HomePageState extends State<HomePage> {
                       )
                     ),
                     SizedBox(height: 10,),
+
+                    //Section for ice breaker session must be connected here
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: 200,
@@ -170,10 +173,13 @@ class _HomePageState extends State<HomePage> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Icon(
-                                  Icons.play_circle_outline_rounded,
-                                  color: AppColors.textMain,
-                                  size: 50,
+                                GestureDetector(
+                                  onTap: (){
+                                    Navigator.push(
+                                        context,
+                                      MaterialPageRoute(builder: (context) => ProgressTrackingPage()) //Add Ice breaker session page here
+                                    );
+                                  },
                                 )
                               ],
                             )

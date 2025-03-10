@@ -10,6 +10,7 @@ class HelpPage extends StatefulWidget {
 }
 
 class _HelpPageState extends State<HelpPage> {
+  //Launch Url code starts here
   // void launchURL(String url) async{
   //   final Uri uri = Uri.parse(url);
   //   if(!await launchUrl(uri,mode: LaunchMode.externalApplication)){
