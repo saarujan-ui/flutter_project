@@ -26,6 +26,6 @@ def login():
 
     user = get_user_by_email(email)
     if not user or not check_password_hash(user['password'], password):
-        return jsonify({'message': 'Invalid credentials'}), 401
+        return jsonify({'message': 'Invalid Credentials'}), 401
 
     return jsonify({'message': 'Login successful'}), 200
