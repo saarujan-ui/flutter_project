@@ -16,7 +16,7 @@ def register():
         return jsonify({'message': 'User Already Exists'}), 400
 
     create_user(email, password)
-    return jsonify({'message': 'User registered successfully'}), 201
+    return jsonify({'message': 'User Registered Successfully'}), 201
 
 @auth.route('/login', methods=['POST'])
 def login():
