@@ -77,6 +77,7 @@ class _HelpPageState extends State<HelpPage> {
                         color: AppColors.green_1,
                         size: 30,
                       ),
+                      //Added Email for contact and support in this drop down menu
                       title: Text(
                         "Contacts",
                         style: TextStyle(
@@ -103,6 +104,7 @@ class _HelpPageState extends State<HelpPage> {
                         color: AppColors.green_1,
                         size: 30,
                       ),
+                      //Added Social Media Links to this drop down menu
                       title: Text(
                         "Social Media",
                         style: TextStyle(
@@ -128,6 +130,15 @@ class _HelpPageState extends State<HelpPage> {
                             Icons.video_camera_back,
                           ),
                           //onTap: ()=> launchURL("https://www.youtube.com/@SocialEase-e2l"),
+                        ),
+                        ListTile(
+                          title: Text(
+                            "Website",
+                          ),
+                          leading: Icon(
+                            Icons.web,
+                          ),
+                          //onTap: ()=> launchURL("http://socialease.netlify.app/"),
                         ),
                       ],
                     ),
