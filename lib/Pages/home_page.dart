@@ -26,7 +26,8 @@ class _HomePageState extends State<HomePage> {
     {
       "color" : AppColors.green_4,
       "image" : "Assets/voice_practice_icon.png",
-      "title" : "Voice Practice Branch"
+      "title" : "Voice Practice Branch",
+      "Page"  : const ConversationBranchPage() //Add Voice Practice Page here
     }
   ];
   @override
