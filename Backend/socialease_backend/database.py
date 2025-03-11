@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-# MySQL Database URL (Update with your credentials)
+# MySQL Database URL 
 DATABASE_URL = "mysql+pymysql://username:password@localhost:3306/mydatabase"
 
 # Create Engine
