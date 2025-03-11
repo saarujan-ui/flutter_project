@@ -170,7 +170,6 @@ class _HomePageState extends State<HomePage> {
                                 color: AppColors.background,
                               ),
                             ),
-                            SizedBox(height: 2,),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -181,6 +180,11 @@ class _HomePageState extends State<HomePage> {
                                       MaterialPageRoute(builder: (context) => ProgressTrackingPage()) //Add Ice breaker session page here
                                     );
                                   },
+                                  child: Icon(
+                                    Icons.play_circle_outline_rounded,
+                                    size: 50,
+                                    color: AppColors.textMain,
+                                  ),
                                 )
                               ],
                             )
