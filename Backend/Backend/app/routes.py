@@ -13,10 +13,10 @@ def register():
     password = data.get('password')
 
     if get_user_by_email(email):
-        return jsonify({'message': 'User already exists'}), 400
+        return jsonify({'message': 'User Already Exists'}), 400
 
     create_user(email, password)
-    return jsonify({'message': 'User registered successfully'}), 201
+    return jsonify({'message': 'User Registered Successfully'}), 201
 
 @auth.route('/login', methods=['POST'])
 def login():
@@ -26,6 +26,6 @@ def login():
 
     user = get_user_by_email(email)
     if not user or not check_password_hash(user['password'], password):
-        return jsonify({'message': 'Invalid credentials'}), 401
+        return jsonify({'message': 'Invalid Credentials'}), 401
 
-    return jsonify({'message': 'Login successful'}), 200
+    return jsonify({'message': 'Login Successfully'}), 200
